@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact | HOPISO Promotion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Contact HOPISO Promotion for inquiries and collaborations.">
+<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">HOPISO</div>
+  <nav id="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+  
+  </nav>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+
+<section class="content">
+  <h1>Contact Us</h1>
+  <form onsubmit="sendMessage(event)">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 HOPISO Promotion</p>
+</footer>
+
+<script>
+function sendMessage(e){
+  e.preventDefault();
+  alert("Message sent successfully!");
+}
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard | HOPISO Promotion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/admin1.css">
+</head>
+<body onload="protect()">
+
+<header class="header">
+  <h2>Admin Panel</h2>
+  <button onclick="logout()">Logout</button>
+</header>
+
+<section class="admin-panel admin">
+<h3>Create Post</h3>
+<select id="type">
+  <option value="blog">Blog</option>
+  <option value="news">News</option>
+</select>
+<input id="title" placeholder="Title">
+<textarea id="content" placeholder="Content"></textarea>
+<input type="file" id="image" accept="image/*">
+<img id="preview" style="max-width:200px; margin-bottom:10px;">
+<button onclick="addPost()">Publish</button>
+
+<h3>Manage Posts</h3>
+<div id="adminPosts"></div>
+</section>
+
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
