@@ -1,0 +1,95 @@
+/* ===== VARIABLES ===== */
+:root {
+  --primary: #111;
+  --accent: #ff6600;
+  --bg: #f5f7fa;
+  --text: #333;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --button-hover: #e65a00;
+}
+
+/* ===== GLOBAL ===== */
+body.auth {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #111, #333);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--text);
+}
+
+/* ===== LOGIN BOX ===== */
+.login-box {
+  background: var(--bg);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.login-box h2 {
+  margin-bottom: 30px;
+  color: var(--primary);
+  font-size: 28px;
+}
+
+/* ===== INPUTS ===== */
+.login-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(255, 102, 0, 0.5);
+}
+
+/* ===== BUTTON ===== */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-box button:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+  .login-box h2 {
+    font-size: 24px;
+  }
+  .login-box button {
+    font-size: 16px;
+  }
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}

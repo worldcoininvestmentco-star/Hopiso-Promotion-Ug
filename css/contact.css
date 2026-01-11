@@ -1,0 +1,233 @@
+/* =========================================================
+   DESIGN SYSTEM (CONSISTENT BRAND)
+========================================================= */
+:root {
+  --brand-dark: #0b1324;
+  --brand-primary: #121c3a;
+  --brand-accent: #ff6a00;
+  --brand-accent-hover: #e85d00;
+
+  --bg-main: #f4f7fb;
+  --bg-surface: #ffffff;
+  --bg-muted: #f1f5f9;
+
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #e5e7eb;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 4px 12px rgba(0,0,0,.06);
+  --shadow-md: 0 12px 28px rgba(0,0,0,.10);
+  --shadow-lg: 0 22px 60px rgba(0,0,0,.16);
+
+  --transition-fast: 0.2s ease;
+  --transition: 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+/* =========================================================
+   BASE RESET
+========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand-primary));
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-md);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+#nav {
+  display: flex;
+  gap: 26px;
+}
+
+#nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  transition: color var(--transition-fast);
+}
+
+#nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--brand-accent);
+  transition: width var(--transition-fast);
+}
+
+#nav a:hover {
+  color: #fff;
+}
+
+#nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile menu icon */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =========================================================
+   CONTACT CONTENT AREA
+========================================================= */
+.content {
+  max-width: 720px;
+  margin: 80px auto;
+  background: var(--bg-surface);
+  padding: 50px 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.content h1 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 30px;
+  font-weight: 800;
+  color: var(--brand-primary);
+}
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  transition: border var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Focus State */
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 3px rgba(255,106,0,.18);
+}
+
+/* Submit Button */
+form button {
+  margin-top: 10px;
+  align-self: center;
+  background: linear-gradient(135deg, var(--brand-accent), #ff8a3d);
+  color: #fff;
+  border: none;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+form button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand-primary));
+  color: var(--text-light);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 80px;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+@media (max-width: 768px) {
+
+  #nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    gap: 5px;
+    width: 140px;
+    padding: 20px;
+    border-radius: 8px;
+    align-items: center;
+    background: var(--brand-dark);
+    box-shadow: var(--shadow-lg);
+  }
+
+  #nav.show {
+    display: flex;
+  }
+
+  #nav a {
+    padding: 16px 26px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .content {
+    margin: 50px 16px;
+    padding: 36px 24px;
+  }
+}
